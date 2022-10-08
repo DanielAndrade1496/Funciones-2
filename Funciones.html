@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Funciones</title>
+    <link rel="stylesheet" href="Estilos.css">
+	
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap" rel="stylesheet">
+		<style>
+			.printbutton {
+				cursor: pointer;
+			}
+		</style>
+</head>
+<body>
+	
+	
+	
+	
+    
+				<fieldset class="box">
+                    <legend>Tranformador de hora a segundos</legend>
+                    <ul>
+                       
+                            
+				<input type="text" id="hora" placeholder="Hora" readonly>
+				<input type="text" id="final" placeholder="Segundos"readonly>
+				<br><br>
+				
+						<button onclick="hora()">Resultado</button>
+                        
+				<script>
+					function hora(){
+					var Fecha = new Date ();
+					var hora =Fecha.getHours();
+					var minutos=Fecha.getMinutes();
+					var segundos =Fecha.getSeconds();
+
+					var hsegundo =hora *3600;
+					var minutosse=minutos *60;
+					var final =hsegundo+minutosse;
+					if(segundos <10){
+                        segundos=("0"+ String(segundos))
+					}
+					if(hora <10){
+						hora=("0"+ String(hora))
+					}
+					if(minutos <10){
+						minutos=("0"+ String(minutos))
+					}
+					var horaactual =String(hora)+":"+String(minutos)+":"+(segundos);
+					document.getElementById('hora').value=horaactual;
+					document.getElementById('final').value=final;
+						}		
+				</script>
+			
+                    </ul>
+                </fieldset class="box">
+                <br>
+
+                <fieldset class="box">
+                    <legend>área de un triángulo</legend>
+                    <ul>
+                         
+                            
+                            <input type="number" id="base" placeholder="Base">
+                                <input type="number" id="altura" placeholder="Altura">
+                                <br><br>
+                                <button onclick="AreaTotal()">Calcular área</button>
+                                <br><br>
+                                <label>El Área es de : </label>
+                                <div id="AreaTotal"></div>
+                                <script>
+                                function AreaTotal(){
+                                var AreaTotal = document.getElementById("AreaTotal");
+                                var b = parseInt(document.getElementById("base").value);
+                                var h = parseInt(document.getElementById("altura").value);
+                                var area = (b * h) / 2;
+            
+                                AreaTotal.innerHTML = "" + area;
+                                }
+                                </script>
+                            
+                    </ul>
+                </fieldset>
+                <br>
+                <fieldset class="box">
+                    <legend>raíz cuadrada de un número impar</legend>
+                    <ul>
+                        
+                            <input type="number" id="Num" placeholder="Valor">
+                            <br><br>
+                            <button onclick="RaizTotal()">Calcular raíz</button>
+                            <br><br>
+                            <label>El total de la Raíz es de: </label>
+                            <div id="reraiz">
+                            </div>
+                            <script>
+                            function RaizTotal(){
+                            var reraiz = document.getElementById("reraiz");
+                            var r = parseInt(document.getElementById("Num").value);
+                            var raíz = Math.sqrt(r);
+                            reraiz.innerHTML = "" + raíz.toFixed(3);
+                            }
+                            </script>
+                    </ul>
+                </fieldset>
+                <br>
+
+                <fieldset class="box">
+                    <legend>Nombre y versión del navegador</legend>
+                    <ul>
+                        
+                            
+                            <script>
+                                document.write("Nombre y versión del navegador: " + navigator.userAgent);
+                            </script>
+                         
+                    </ul>
+                </fieldset>
+                <br>
+                <fieldset class="box">
+                    <legend>Ancho y la altura de la pantalla</legend>
+                    <ul>
+                         
+                            
+                            <p id="pantalla1"></p>
+                            <p id="pantalla2"></p>
+                            <script>
+                                document.getElementById("pantalla1").innerHTML = "El Ancho de la pantalla es de: " + screen.width;
+                                document.getElementById("pantalla2").innerHTML = "La Altura de la pantalla es de: " + screen.height;
+                            </script>
+                          
+                    </ul>
+                </fieldset>
+                <br>
+                <fieldset class="box">
+                    <legend>Ingresar una cadena de texto y mostrar la longitud de la cadena</legend>
+                    <ul>
+                        <p>Esto es una prueba con una palabra configurada</p>
+                            <script>
+                            var texto = new String("Esto es una prueba con una palabra configurada");
+                            
+                            document.write("Número de letras de la cadena de texto : " + texto.length + "<br>") 
+                            </script>
+                        
+                    </ul>
+                </fieldset>
+                <br>
+                <fieldset class="box">
+                    <legend>Imprimir la página</legend>
+                    <ul>
+                        
+                            
+                            <input type="button" value="Imprimir" class="printbutton">
+                            <script>
+                            document.querySelectorAll('.printbutton').forEach(function(element) {
+                            element.addEventListener('click', function() {
+                                print();
+                                    });
+                                });
+                            </script>
+                            
+                     </div> 
+                    </ul>
+                </fieldset>
+</body>
+</html>

@@ -1,0 +1,31 @@
+.box{
+    width: 400px;
+    height: 150px;
+    background-color:rgba(0, 0, 0, 0.637);
+    border: 1.5px solid rgb(0, 0, 0);
+}
+body{
+    background-image: url(https://img2.rtve.es/i/?w=1600&i=1386350163529.jpg);
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    font-size: 18px;
+}
+.boton{
+    display: inline-block;
+    padding: 2px 5px;
+    color: #fff;
+    transition: 0.2s;
+    text-decoration: none;
+    letter-spacing: 4px;
+}
+.boton:hover{
+    background: #000000a8;
+    box-shadow: 0 0 10px #000000a8, 0 0 40px #000000a8,
+    0 0 80px  #000000a8;
+}
+.botondiv{
+    background: #000000a8;
+    width: 230px;
+    height: 25px;
+    margin: auto;
+}
